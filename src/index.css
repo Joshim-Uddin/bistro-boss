@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.jar{
+    @apply max-w-screen-xl w-10/12 mx-auto
+}
+.react-tabs__tab--selected{
+    @apply text-yellow-600 font-semibold border-b-2 border-yellow-600
+}
