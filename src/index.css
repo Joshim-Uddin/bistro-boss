@@ -8,3 +8,6 @@
 .react-tabs__tab--selected{
     @apply text-yellow-600 font-semibold border-b-2 border-yellow-600
 }
+.swal2-styled{
+    @apply p-2 ms-3
+}

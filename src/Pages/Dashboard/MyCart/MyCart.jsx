@@ -28,7 +28,12 @@ const MyCart = () => {
           </thead>
           <tbody>
             {cart.map((item, index) => (
-              <ItemRow key={item._id} item={item} index={index} />
+              <ItemRow
+                key={item._id}
+                item={item}
+                index={index}
+                refetch={refetch}
+              />
             ))}
           </tbody>
         </table>

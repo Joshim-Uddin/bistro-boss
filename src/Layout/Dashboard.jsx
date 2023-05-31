@@ -8,6 +8,7 @@ import {
   FaWallet,
 } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import Sidebar from "../Shared/Sidebar/Sidebar";
 
 const Dashboard = () => {
   return (
@@ -93,6 +94,8 @@ const Dashboard = () => {
                 <FaCalendarCheck /> My Bookings
               </NavLink>
             </li>
+            <div className="divider bg-white p-0 h-1"></div>
+            <Sidebar />
           </ul>
         </div>
       </div>

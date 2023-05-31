@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 import useCart from "../Hooks/useCart";
+import Swal from "sweetalert2";
 
 const FoodCard = ({ item }) => {
   const [, refetch] = useCart();
@@ -20,7 +21,11 @@ const FoodCard = ({ item }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          console.log("added to cart");
+          Swal.fire({
+            title: "Item Added to Cart",
+            text: "",
+            timer: 2000,
+          });
           refetch();
         }
       });
