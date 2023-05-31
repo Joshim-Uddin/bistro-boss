@@ -23,12 +23,14 @@ const Navbar = () => {
         <Link to="/ourfood">Our Food</Link>
       </li>
       {user ? (
-        <button className="btn btn-success gap-2 relative me-5">
-          <FaShoppingCart />
-          <div className="badge badge-secondary absolute bottom-10 left-2">
-            {cart.length}
-          </div>
-        </button>
+        <Link to="dashboard/mycart">
+          <button className="btn btn-success gap-2 relative me-5">
+            <FaShoppingCart />
+            <div className="badge badge-secondary absolute bottom-10 left-2">
+              {cart.length}
+            </div>
+          </button>
+        </Link>
       ) : (
         ""
       )}
@@ -41,7 +43,15 @@ const Navbar = () => {
           <Link to="/login">Login</Link>
         </li>
       )}
-      {user ? <FaUserCircle className="ms-2 text-5xl" /> : ""}
+      {user ? (
+        <img
+          src={user?.photoUrl}
+          alt=""
+          className="w-12 h-12 rounded-full ms-2"
+        />
+      ) : (
+        <FaUserCircle className="ms-2 text-5xl" />
+      )}
     </>
   );
   return (

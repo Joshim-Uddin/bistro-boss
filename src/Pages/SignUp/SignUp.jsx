@@ -5,6 +5,7 @@ import image from "./../../assets/others/authentication1.png";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
   const { signUp } = useContext(AuthContext);
@@ -28,7 +29,12 @@ const SignUp = () => {
           photoURL: photoUrl,
         })
           .then((res) => {
-            
+            Swal.fire({
+              icon: "success",
+              title: "Sign Up Success",
+              showConfirmButton: false,
+              timer: 1500,
+            });
           })
           .catch((err) => err);
         navigate(from, { replace: true });
